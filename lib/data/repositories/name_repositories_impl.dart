@@ -2,7 +2,9 @@ import 'package:cubitsample/core/extensions/iterable_extension.dart';
 import 'package:cubitsample/domain/entities/name.dart';
 import 'package:cubitsample/domain/repositories/name_repositories.dart';
 
+/// Concrete implementation of NameRepository
 class NameRepositoryImpl implements NameRepository {
+  //list of name for the repository
   final List<Name> _names = const [
     Name('Ram'),
     Name('Shyam'),
@@ -15,6 +17,7 @@ class NameRepositoryImpl implements NameRepository {
     Name('Smith'),
     Name('Emily'),
   ];
+  
   @override
   List<Name> getAllNames() {
     return _names;

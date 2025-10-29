@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Cubit Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePage(nameCubit: cubit),
+      home: HomePage(nameCubit: cubit), 
     );
   }
 }
