@@ -1,35 +1,25 @@
+import 'package:cubitsample/application/name_cubit.dart';
+import 'package:cubitsample/data/repositories/name_repositories_impl.dart';
+import 'package:cubitsample/presentation/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:bloc/bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'dart:math' as math show Random;
 
 void main() {
   runApp(const MyApp());
 }
-
-const name = [
-  'Ram',
-  'Shyam',
-  'Hari',
-  'Gita',
-  'Sita',
-  'John',
-  'Doe',
-  'Jane',
-  'Smith',
-  'Emily',
-];
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final repository = NameRepositoryImpl();
+    final cubit = NameCubit(repository);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Cubit Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      title: 'cubit Demo',
-      home: Scaffold(appBar: AppBar(title: Text('Cubit Demo App'))),
+      home: HomePage(nameCubit: cubit),
     );
   }
 }
